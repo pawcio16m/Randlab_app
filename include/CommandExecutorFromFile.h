@@ -8,9 +8,8 @@
 class CommandExecutorFromFile : public CommandExecutor
 {
 public:
-	CommandExecutorFromFile(/*boost::interprocess::message_queue& queue,*/ std::string filename)
-  : //CommandExecutor(queue),
-	  m_filename(filename)
+	CommandExecutorFromFile(std::string filename)
+  : m_filename(filename)
 	{}
 	virtual ~CommandExecutorFromFile() = default;
 	void executeCommand() override;
@@ -21,5 +20,3 @@ private:
 	std::string m_filename;
 	ErrorLogger m_errorLogger{};
 };
-
-

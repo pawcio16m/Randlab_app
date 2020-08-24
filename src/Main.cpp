@@ -26,17 +26,17 @@ int main(int argc, char **argv)
                                      MAX_MSG_SIZE);
   auto pid = fork();
 
-  CommandHandler cmdHandler{};/*sendingErrorMsgQueue*/
+  CommandHandler cmdHandler{};
   std::unique_ptr<CommandExecutor> cmdExecutor;
 
   if (argc > 1)
   {
     std::string filename = argv[1];
-    cmdExecutor = std::make_unique<CommandExecutorFromFile>(/*sendingCommandMsgQueue,*/ filename);
+    cmdExecutor = std::make_unique<CommandExecutorFromFile>(filename);
   }
   else
   {
-    cmdExecutor = std::make_unique<CommandExecutorFromPrompt>(/*sendingCommandMsgQueue*/);
+    cmdExecutor = std::make_unique<CommandExecutorFromPrompt>();
   }
 
   if (pid == 0)

@@ -21,19 +21,18 @@ void CommandExecutorFromFile::executeCommand()
 	if (commandListFile.is_open())
 	{
 		while (not commandListFile.eof())
-	    {
+		{
 			std::getline(commandListFile, tempStr);
 			tempStr[tempStr.size() - 1] = '\0';
 			commandNameList.push_back(tempStr);
-	    }
+		}
 		commandListFile.close();
 	}
 	else
 	{
-		std::cout << "Cannot open " << m_filename << " - please double check filename\n";
+		std::cout << "[CommandExecutorFromFile] Cannot open " << m_filename << " - please double check filename\n";
 	}
 
-	//Processing
 	for (const auto command : commandNameList)
 	{
 		std::cout << "[CommandExecutorFromFile] Execute " << command << " command\n";
@@ -41,6 +40,7 @@ void CommandExecutorFromFile::executeCommand()
 		sendCommand(command);
 
 		std::this_thread::sleep_for(1s);
+
 		auto errorLog = checkError();
 		if (errorLog != NO_ERROR)
 		{
@@ -48,4 +48,3 @@ void CommandExecutorFromFile::executeCommand()
 		}
 	}
 }
-

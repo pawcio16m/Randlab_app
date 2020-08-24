@@ -34,7 +34,7 @@ std::string CommandExecutor::checkError()
     if (receivedMsgSize > 0)
     {
       errorLog.resize(receivedMsgSize);
-      std::cout << "[CommandExecutor] Received error[" << errorLog << "] with size = " << receivedMsgSize << "\n";
+      std::cout << "[CommandExecutor] Received msg[" << errorLog << "] with size = " << receivedMsgSize << "\n";
       return errorLog;
     }
   }

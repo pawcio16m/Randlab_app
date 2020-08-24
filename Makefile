@@ -1,9 +1,9 @@
 CXX 	 		:= g++
 CXXFLAGS 	:= -std=c++14 -Wall 
 
-LIB_DIR    	:= -L boost_1_61_0/libs -L lib/opencv/build/lib/
-LIBRARIES   := -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -lrt -lpthread
-LIB_INC 		:= -I boost_1_61_0/ -I lib/opencv/build/include/
+LIB_DIR    	:= -L lib/
+LIBRARIES   := -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -lrt -lpthread -lboost_regex
+LIB_INC 		:=  -I lib/opencv/include/ -I lib/boost/include/
 
 BIN_DIR    	:= bin
 INC_DIR    	:= -I include

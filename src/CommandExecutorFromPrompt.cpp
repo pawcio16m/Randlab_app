@@ -7,6 +7,7 @@
 void CommandExecutorFromPrompt::executeCommand()
 {
   using namespace std::chrono_literals;
+
   while (true)
   {
     std::string command;

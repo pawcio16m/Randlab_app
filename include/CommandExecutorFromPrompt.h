@@ -8,9 +8,7 @@
 class CommandExecutorFromPrompt : public CommandExecutor
 {
 public:
-	CommandExecutorFromPrompt()//(boost::interprocess::message_queue& queue)
-//	: CommandExecutor(queue)
-	{}
+	CommandExecutorFromPrompt() = default;
 	virtual ~CommandExecutorFromPrompt() = default;
 	void executeCommand() override;
 

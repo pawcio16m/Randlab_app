@@ -61,17 +61,17 @@ void PicturePainter::drawTriangle(Point corr1, Point corr2, Point corr3)
 	std::cout << "Setting TringCoor1(" << corr1.x << "," << corr1.y << "),\nTringCoor2(" << corr2.x << "," << corr2.y << "),\nTringCoor3(" << corr3.x << "," << corr3.y << ")\n";
   if (corr1.x > m_width or corr2.y > m_height)
   {
-    std::cout << "ERROR Cannot draw triangle because Coor1(" << corr1.x << ", " << corr1.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
+    std::cout << "[PICTURE_PAINTER] ERROR Cannot draw triangle because Coor1(" << corr1.x << ", " << corr1.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
     return;
   }
   if (corr2.x > m_width or corr2.y > m_height)
   {
-    std::cout << "ERROR Cannot draw triangle because Coor2(" << corr2.x << ", " << corr2.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
+    std::cout << "[PICTURE_PAINTER] ERROR Cannot draw triangle because Coor2(" << corr2.x << ", " << corr2.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
     return;
   }
   if (corr3.x > m_width or corr3.y > m_height)
   {
-    std::cout << "ERROR Cannot draw triangle because Coor1(" << corr3.x << ", " << corr3.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
+    std::cout << "[PICTURE_PAINTER] ERROR Cannot draw triangle because Coor1(" << corr3.x << ", " << corr3.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
     return;
   }
 
@@ -80,7 +80,7 @@ void PicturePainter::drawTriangle(Point corr1, Point corr2, Point corr3)
 
 void PicturePainter::saveFile(std::string filename)
 {
-	std::cout << "Saving file " << filename << std::endl;
+	std::cout << "[PICTURE_PAINTER] Saving file " << filename << std::endl;
   std::vector<int> compressionPparams;
   compressionPparams.push_back(cv::IMWRITE_JPEG_QUALITY);
   cv::Mat picture(m_height, m_width, CV_8UC1, cv::Scalar(255));

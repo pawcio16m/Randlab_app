@@ -6,13 +6,11 @@
 
 #include "MessageCommunication.h"
 
-const std::string NO_ERROR = "ERROR_NOT_OCCUR";
-
 using namespace boost::interprocess;
 
 struct CommandExecutor
 {
-	CommandExecutor(/*message_queue& sendingCmdQueue*/)
+	CommandExecutor()
 	: m_sendingCommandMsgQueue(open_only,
 	                           COMMAND_MSG_QUEUE_NAME.c_str()),
 	  m_receivedErrorMsgQueue(open_only,
