@@ -3,7 +3,6 @@
 #include <string>
 
 #include "CommandExecutor.h"
-#include "ErrorLogger.h"
 
 class CommandExecutorFromFile : public CommandExecutor
 {
@@ -18,5 +17,4 @@ private:
 	void printCommand(std::string);
 
 	std::string m_filename;
-	ErrorLogger m_errorLogger{};
 };

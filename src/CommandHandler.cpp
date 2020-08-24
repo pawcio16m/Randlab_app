@@ -117,7 +117,7 @@ void CommandHandler::handleCommand(std::string command)
 		case Command::NOT_FOUND:
 		default:
 		{
-			std::cout << "[CommandHandler] ERROR \"" << command << "\" not recognized\n";
+			std::cout << "[CommandHandler] ERROR \"" << command << "\" not recognized as legal command.\n";
 			sendError(command);
 		}
 	}

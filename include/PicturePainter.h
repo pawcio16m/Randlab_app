@@ -12,7 +12,7 @@
 class PicturePainter
 {
 public:
-	PicturePainter();
+	PicturePainter() =default;
 	virtual ~PicturePainter();
 
 	void setWidth(unsigned int);

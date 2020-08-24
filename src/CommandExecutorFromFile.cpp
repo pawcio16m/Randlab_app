@@ -13,18 +13,20 @@ void CommandExecutorFromFile::executeCommand()
   using namespace std::chrono_literals;
 
 	std::ifstream commandListFile;
-	std::string commandName{};
-	std::string tempStr{};
+	std::string commandName;
 	std::vector<std::string> commandNameList{};
 	commandListFile.open(m_filename);
 
 	if (commandListFile.is_open())
 	{
-		while (not commandListFile.eof())
+		while (std::getline(commandListFile, commandName))
 		{
-			std::getline(commandListFile, tempStr);
-			tempStr[tempStr.size() - 1] = '\0';
-			commandNameList.push_back(tempStr);
+      if (commandName.size() > 0)
+      {
+        commandName[commandName.size() - 1] = '\0';
+        commandName.resize(commandName.size() - 1);
+        commandNameList.push_back(commandName);
+			}
 		}
 		commandListFile.close();
 	}
@@ -35,16 +37,15 @@ void CommandExecutorFromFile::executeCommand()
 
 	for (const auto command : commandNameList)
 	{
-		std::cout << "[CommandExecutorFromFile] Execute " << command << " command\n";
+	  if (command.size() > 0)
+	  {
+      std::cout << "[CommandExecutorFromFile] Execute " << command << " command\n";
 
-		sendCommand(command);
+      sendCommand(command);
 
-		std::this_thread::sleep_for(1s);
+      std::this_thread::sleep_for(1s);
 
-		auto errorLog = checkError();
-		if (errorLog != NO_ERROR)
-		{
-		  m_errorLogger.logError(errorLog);
-		}
+      checkError();
+	  }
 	}
 }

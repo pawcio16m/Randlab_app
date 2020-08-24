@@ -19,7 +19,7 @@ ErrorLogger::ErrorLogger()
 
 void ErrorLogger::logError(std::string error)
 {
-  std::cout << "[ErrorLogger] Logging error\"" << error << "\" to file " << errorFilename << std::endl;
+  std::cout << "[ErrorLogger] Logging error \"" << error << "\" to file " << errorFilename << std::endl;
 	std::ofstream errorFile;
 	errorFile.open(errorFilename, std::ios::in | std::ios::app);
 	errorFile << error.c_str();

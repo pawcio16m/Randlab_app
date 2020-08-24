@@ -12,8 +12,11 @@ void CommandExecutor::sendCommand(std::string cmd)
 {
   try
   {
-    std::cout << "Sending command " << cmd << std::endl;
-    m_sendingCommandMsgQueue.send(cmd.data(), cmd.size(), 0);
+    if (cmd.size() > 0)
+    {
+      std::cout << "[CommandExecutor] Sending command[" << cmd << "]\n";
+      m_sendingCommandMsgQueue.send(cmd.data(), cmd.size(), 0);
+    }
   }
   catch (interprocess_exception& e)
   {
@@ -21,7 +24,7 @@ void CommandExecutor::sendCommand(std::string cmd)
   }
 }
 
-std::string CommandExecutor::checkError()
+void CommandExecutor::checkError()
 {
   std::cout << "[CommandExecutor] Checking error...\n";
   try
@@ -34,15 +37,21 @@ std::string CommandExecutor::checkError()
     if (receivedMsgSize > 0)
     {
       errorLog.resize(receivedMsgSize);
-      std::cout << "[CommandExecutor] Received msg[" << errorLog << "] with size = " << receivedMsgSize << "\n";
-      return errorLog;
+      if (errorLog != NO_ERROR)
+      {
+        std::cout << "[CommandExecutor] Received error[" << errorLog << "] with size = " << receivedMsgSize << "\n";
+        m_errorLogger.logError(errorLog);
+      }
+      else
+      {
+        std::cout << "[CommandExecutor] No error found\n";
+      }
     }
   }
   catch (interprocess_exception& e)
   {
     std::cout << e.what( ) << std::endl;
   }
-  return NO_ERROR;
 }
 
 
