@@ -5,10 +5,10 @@
 class ErrorLogger
 {
 public:
-	ErrorLogger();
-	virtual ~ErrorLogger() = default;
-	void logError(std::string);
+  ErrorLogger();
+  virtual ~ErrorLogger() = default;
+  void logError(std::string);
 
 private:
-	std::string errorFilename = "log.txt";
+  std::string errorFilename = "log.txt";
 };

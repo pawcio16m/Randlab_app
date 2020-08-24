@@ -9,8 +9,9 @@
 
 using namespace boost::interprocess;
 
-struct CommandExecutor
+class CommandExecutor
 {
+public:
   CommandExecutor()
   : m_sendingCommandMsgQueue(open_only,
                              COMMAND_MSG_QUEUE_NAME.c_str()),
@@ -25,6 +26,7 @@ struct CommandExecutor
   void sendCommand(std::string);
   void checkError();
 
+private:
   message_queue m_sendingCommandMsgQueue;
   message_queue	m_receivedErrorMsgQueue;
 

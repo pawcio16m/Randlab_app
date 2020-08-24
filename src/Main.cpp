@@ -41,11 +41,11 @@ int main(int argc, char **argv)
 
   if (pid == 0)
   {
-      cmdHandler.run();
+    cmdHandler.run();
   }
   else
   {
-      cmdExecutor->executeCommand();
+    cmdExecutor->executeCommand();
   }
 	return 0;
 }

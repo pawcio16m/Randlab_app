@@ -7,7 +7,7 @@
 class CommandExecutorFromPrompt : public CommandExecutor
 {
 public:
-	CommandExecutorFromPrompt() = default;
-	virtual ~CommandExecutorFromPrompt() = default;
-	void executeCommand() override;
+  CommandExecutorFromPrompt() = default;
+  virtual ~CommandExecutorFromPrompt() = default;
+  void executeCommand() override;
 };

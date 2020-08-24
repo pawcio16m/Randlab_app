@@ -24,25 +24,25 @@ PicturePainter::~PicturePainter()
 
 void PicturePainter::setWidth(unsigned int width)
 {
-	std::cout << "[PICTURE_PAINTER] Setting width = " << width << std::endl;
-	m_width = width;
+  std::cout << "[PICTURE_PAINTER] Setting width = " << width << std::endl;
+  m_width = width;
 }
 
 void PicturePainter::setHeight(unsigned int height)
 {
-	std::cout << "[PICTURE_PAINTER] Setting height = " << height << std::endl;
-	m_height = height;
+  std::cout << "[PICTURE_PAINTER] Setting height = " << height << std::endl;
+  m_height = height;
 }
 
 void PicturePainter::drawRectangle(Point rectPnt, unsigned int width, unsigned int height)
 {
-	std::cout << "[PICTURE_PAINTER] Setting RectCoor(" << rectPnt.x << "," << rectPnt.y << ") with width = " << width << " and height = " << height << std::endl;
+  std::cout << "[PICTURE_PAINTER] Setting RectCoor(" << rectPnt.x << "," << rectPnt.y << ") with width = " << width << " and height = " << height << std::endl;
 
-	if (rectPnt.x + width > m_width)
-	{
-	  std::cout << "[PICTURE_PAINTER] ERROR Cannot draw rectangle because Rect.x(" << rectPnt.x << ") + width(" << width << ") is higher then picture width(" << m_width << ").\n";
-	  return;
-	}
+  if (rectPnt.x + width > m_width)
+  {
+    std::cout << "[PICTURE_PAINTER] ERROR Cannot draw rectangle because Rect.x(" << rectPnt.x << ") + width(" << width << ") is higher then picture width(" << m_width << ").\n";
+    return;
+  }
   if (rectPnt.y + height > m_height)
   {
     std::cout << "[PICTURE_PAINTER] ERROR Cannot draw rectangle because Rect.y(" << rectPnt.y << ") + height(" << height << ") is higher then picture height(" << m_height << ").\n";
@@ -53,7 +53,7 @@ void PicturePainter::drawRectangle(Point rectPnt, unsigned int width, unsigned i
 
 void PicturePainter::drawTriangle(Point corr1, Point corr2, Point corr3)
 {
-	std::cout << "[PICTURE_PAINTER] Setting TringCoor1(" << corr1.x << "," << corr1.y << "),\nTringCoor2(" << corr2.x << "," << corr2.y << "),\nTringCoor3(" << corr3.x << "," << corr3.y << ")\n";
+  std::cout << "[PICTURE_PAINTER] Setting TringCoor1(" << corr1.x << "," << corr1.y << "),\nTringCoor2(" << corr2.x << "," << corr2.y << "),\nTringCoor3(" << corr3.x << "," << corr3.y << ")\n";
   if (corr1.x > m_width or corr2.y > m_height)
   {
     std::cout << "[PICTURE_PAINTER] ERROR Cannot draw triangle because Coor1(" << corr1.x << ", " << corr1.y << ") is within of picture size(" << m_width << ", " << m_height << ").\n";
@@ -75,7 +75,7 @@ void PicturePainter::drawTriangle(Point corr1, Point corr2, Point corr3)
 
 void PicturePainter::saveFile(std::string filename)
 {
-	std::cout << "[PICTURE_PAINTER] Saving file " << filename << std::endl;
+  std::cout << "[PICTURE_PAINTER] Saving file " << filename << std::endl;
   std::vector<int> compressionParams;
   compressionParams.push_back(cv::IMWRITE_JPEG_QUALITY);
   cv::Mat picture(m_height, m_width, CV_8UC1, cv::Scalar(255));
@@ -83,9 +83,9 @@ void PicturePainter::saveFile(std::string filename)
   drawShapesInPicture(picture);
 
   cv::imshow(filename + JPEG_EXTENSION, picture);
-	cv::imwrite(filename + JPEG_EXTENSION, picture, compressionParams);
+  cv::imwrite(filename + JPEG_EXTENSION, picture, compressionParams);
 
-	cv::waitKey(0);
+  cv::waitKey(0);
   for (auto shape : m_shapes)
   {
     delete shape;
