@@ -1,2 +1,5 @@
 /bin
-/lib
+/lib/*so*
+/backup
+/ext_lib
+*.jpg

@@ -1,0 +1,60 @@
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[SET_WIDTH 400] with size = 13
+[PICTURE_PAINTER] Setting width = 400
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[SET_HEIGHT 300] with size = 14
+[PICTURE_PAINTER] Setting height = 300
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[DRAW_RECTANGLE 10,10,100,200] with size = 28
+[PICTURE_PAINTER] Setting RectCoor(10,10) with width = 100 and height = 200
+[CommandExecutorFromFile] Execute SET_WIDTH 400 command
+[CommandExecutor] Sending command[SET_WIDTH 400]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutorFromFile] Execute SET_HEIGHT 300 command
+[CommandExecutor] Sending command[SET_HEIGHT 300]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutorFromFile] Execute DRAW_RECTANGLE 10,10,100,200 command
+[CommandExecutor] Sending command[DRAW_RECTANGLE 10,10,100,200]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutorFromFile] Execute DRAW_TRIANGLE 20,20,70,20,50,100 command
+[CommandExecutor] Sending command[DRAW_TRIANGLE 20,20,70,20,50,100]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutorFromFile] Execute WRONG_COMMAND command
+[CommandExecutor] Sending command[WRONG_COMMAND]
+[CommandExecutor] Checking error...
+[CommandExecutor] Received error[WRONG_COMMAND] with size = 13
+[ErrorLogger] Logging error "WRONG_COMMAND" to file log.txt
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[DRAW_TRIANGLE 20,20,70,20,50,100] with size = 32
+[PICTURE_PAINTER] Setting TringCoor1(20,20),
+TringCoor2(70,20),
+TringCoor3(50,100)
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[WRONG_COMMAND] with size = 13
+[CommandHandler] ERROR "WRONG_COMMAND" not recognized
+[CommandHandler] Sending error "WRONG_COMMAND"
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[RENDER picture_from_file] with size = 24
+[PICTURE_PAINTER] Saving file picture_from_file
+[CommandExecutorFromFile] Execute RENDER picture_from_file command
+[CommandExecutor] Sending command[RENDER picture_from_file]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutorFromFile] Execute   command
+[CommandExecutor] Sending command[ ]
+[CommandExecutor] Checking error...
+[CommandExecutor] Received error[ ] with size = 1
+[ErrorLogger] Logging error " " to file log.txt
+[CommandExecutorFromFile] Execute WRONG_COMMAND command
+[CommandExecutor] Sending command[WRONG_COMMAND]
+[CommandExecutor] Checking error...
+[CommandExecutor] Received error[WRONG_COMMAND] with size = 13
+[ErrorLogger] Logging error "WRONG_COMMAND" to file log.txt

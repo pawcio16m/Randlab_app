@@ -1,0 +1,64 @@
+[CommandExecutor] Please type your command and ENTER
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[SET_WIDTH 500] with size = 13
+[PICTURE_PAINTER] Setting width = 500
+[CommandExecutor] Sending command[SET_WIDTH 500]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[SET_HEIGHT 600] with size = 14
+[PICTURE_PAINTER] Setting height = 600
+[CommandExecutor] Sending command[SET_HEIGHT 600]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandExecutor] Sending command[SET_HEIGHT 50 50]
+[CommandExecutor] Checking error...
+[CommandExecutor] Received error[SET_HEIGHT 50 50] with size = 16
+[ErrorLogger] Logging error "SET_HEIGHT 50 50" to file log.txt
+[CommandExecutor] Please type your command and ENTER
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[SET_HEIGHT 50 50] with size = 16
+[CommandHandler] ERROR "SET_HEIGHT 50 50" not recognized
+[CommandHandler] Sending error "SET_HEIGHT 50 50"
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[DRAW_RECTANGLE 50,50,200,300] with size = 28
+[PICTURE_PAINTER] Setting RectCoor(50,50) with width = 200 and height = 300
+[CommandExecutor] Sending command[DRAW_RECTANGLE 50,50,200,300]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[RENDER rectangle_pict] with size = 21
+[PICTURE_PAINTER] Saving file rectangle_pict
+[CommandExecutor] Sending command[RENDER rectangle_pict]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandExecutor] Sending command[DRAW_TRIANGLE 30,40,230,350,150,200]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[DRAW_TRIANGLE 30,40,230,350,150,200] with size = 35
+[PICTURE_PAINTER] Setting TringCoor1(30,40),
+TringCoor2(230,350),
+TringCoor3(150,200)
+[CommandHandler] Sending ACK status
+[CommandHandler] Waiting for command...
+[CommandHandler] Received msg[RENDER triangle_pict] with size = 20
+[PICTURE_PAINTER] Saving file triangle_pict
+[CommandExecutor] Sending command[RENDER triangle_pict]
+[CommandExecutor] Checking error...
+[CommandExecutor] No error found
+[CommandExecutor] Please type your command and ENTER
+[CommandExecutor] Sending command[log some wrong command]
+[CommandExecutor] Checking error...
+[CommandExecutor] Received error[log some wrong command] with size = 22
+[ErrorLogger] Logging error "log some wrong command" to file log.txt
+[CommandExecutor] Please type your command and ENTER
